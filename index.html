@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Каталог автомобилей — AVTOPRIDE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="topbar"><div class="wrap">
+  <span>Авто из Кореи в Беларусь под ключ</span><span>Подбор · проверка · доставка</span>
+  <span>+375 (44) 707-75-75</span><span>🕘 Пн–Пт: 09:00–18:00</span>
+  <span>📍 Минск, ул. Тимирязева, 65Б</span><span>✉️ info@avtopride.by</span>
+</div></div>
+
+<header class="header"><div class="wrap">
+  <a class="logo" href="#"><b>A</b>AUTOPRIDE</a>
+  <nav><a class="active" href="#">Каталог авто</a><a href="#">Калькулятор</a><a href="#">Как работаем</a><a href="#">О компании</a><a href="#">Отзывы</a><a href="#">Контакты</a></nav>
+  <a class="btn btn-white" href="#">Заявка на подбор</a>
+</div></header>
+
+<main class="wrap">
+  <div class="crumbs"><a href="#">Главная</a> / <span>Каталог</span></div>
+  <h1>Каталог автомобилей</h1>
+  <p class="lead">Выберите параметры автомобиля — покажем варианты под заказ и поможем рассчитать стоимость под ключ в Беларуси.</p>
+
+  <div class="cats" id="cats"></div>
+
+  <div class="layout">
+    <h2 class="filter-title">Фильтр</h2>
+    <div class="toolbar">
+      <span class="found">Найдено автомобилей: <b id="found">0</b></span>
+      <div class="toolbar-right">
+        <button class="view is-on" data-view="grid" aria-label="Сетка">▦</button>
+        <button class="view" data-view="list" aria-label="Список">☰</button>
+        <select id="sort">
+          <option value="price-asc">Сортировать по цене: меньше</option>
+          <option value="price-desc">Сортировать по цене: больше</option>
+          <option value="year-desc">Сначала новее</option>
+          <option value="mileage-asc">По пробегу: меньше</option>
+        </select>
+      </div>
+    </div>
+
+    <aside class="filter" id="filter"></aside>
+    <section>
+      <div class="grid" id="grid"></div>
+      <nav class="pager" id="pager"></nav>
+    </section>
+  </div>
+</main>
+
+<footer class="footer"><div class="wrap">
+  <b>AUTOPRIDE</b><span>© AVTOPRIDE 2026</span><span>Минск, ул. Тимирязева, 65Б · Пн–Пт: 09:00–18:00</span>
+</div></footer>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
