@@ -2,9 +2,10 @@
 const RATE = 3.25;
 const PREMIUM = ['Audi', 'BMW', 'Bentley', 'Cadillac', 'Genesis'];
 
+// images: массив URL фотографий из фотобанка; img: одиночное фото (совместимость).
 // tags: 'hit' — «Хит заказов», 'top' — «Топовые предложения»
 const CARS = [
-  { id: 1,  brand: 'Hyundai',   model: 'Santa Fe',   trim: 'Prestige 2.2D 4WD', year: 2022, mileage: 42000,  fuel: 'Дизель',  drive: 'Полный',    power: 202, gearbox: 'Автомат',  body: 'Кроссоверы', priceKr: 18900, priceRb: 28900, tags: ['hit'] },
+  { id: 1, images: ['assets/detail/santa-fe-white.png', 'assets/cars/santa-fe.png'], img: 'assets/cars/santa-fe.png', condition: 'Заводится и едет', registrationDate: '7.6.2021', vin: 'KPADA4AE1MP139650', brand: 'Hyundai',   model: 'Santa Fe',   trim: 'Prestige 2.2D 4WD', year: 2022, mileage: 42000,  fuel: 'Дизель',  drive: 'Полный',    power: 202, gearbox: 'Автомат',  body: 'Кроссоверы', priceKr: 18900, priceRb: 28900, tags: ['hit'] },
   { id: 2,  brand: 'Kia',       model: 'Sportage',   trim: 'Prestige 2.0D AWD', year: 2023, mileage: 21000,  fuel: 'Дизель',  drive: 'Полный',    power: 186, gearbox: 'Автомат',  body: 'Кроссоверы', priceKr: 20400, priceRb: 31200, tags: [] },
   { id: 3,  brand: 'Audi',      model: 'A6',         trim: '45 TFSI quattro',   year: 2021, mileage: 58000,  fuel: 'Бензин',  drive: 'Полный',    power: 245, gearbox: 'Робот',    body: 'Седаны',     priceKr: 27800, priceRb: 40100, tags: ['top'] },
   { id: 4,  brand: 'BMW',       model: '520d',       trim: 'xDrive Luxury',     year: 2022, mileage: 36000,  fuel: 'Дизель',  drive: 'Полный',    power: 190, gearbox: 'Автомат',  body: 'Седаны',     priceKr: 31500, priceRb: 45300, tags: ['top', 'hit'] },

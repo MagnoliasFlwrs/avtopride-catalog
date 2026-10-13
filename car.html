@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Автомобиль — AVTOPRIDE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=detail">
+  <link rel="stylesheet" href="css/detail.css">
+</head>
+<body>
+  <main class="car-detail" id="carDetail"></main>
+  <dialog class="contact-dialog" id="contactDialog" aria-labelledby="contactTitle">
+    <button class="contact-dialog__close" id="closeContact" aria-label="Закрыть окно">×</button>
+    <h2 class="contact-dialog__title" id="contactTitle">Свяжитесь с нами</h2>
+    <p class="contact-dialog__description" id="contactDescription"></p>
+    <a class="detail-button detail-button--primary" href="tel:+375447077575">+375 (44) 707-75-75</a>
+    <a class="contact-dialog__email" id="contactEmail" href="mailto:info@avtopride.by">info@avtopride.by</a>
+  </dialog>
+  <script src="js/data.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/detail-data.js"></script>
+  <script src="js/detail.js"></script>
+</body>
+</html>
