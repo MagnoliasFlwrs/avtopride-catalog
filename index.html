@@ -1,76 +1,146 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Каталог автомобилей — AVTOPRIDE</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=favorites">
-</head>
-<body>
-<main class="catalog">
-<section class="catalog-intro"><div class="catalog__container">
-  <div class="breadcrumbs"><a href="#">Главная</a> / <span>Каталог</span></div>
-  <h1 class="catalog-intro__title">Каталог автомобилей</h1>
-  <p class="catalog-intro__description">Выберите параметры автомобиля — покажем варианты под заказ и поможем рассчитать стоимость под ключ в Беларуси.</p>
-
-  <div class="category-carousel">
-    <div class="category-carousel__track" id="cats" role="group" aria-label="Тип автомобиля"></div>
-    <button class="category-carousel__arrow category-carousel__arrow--previous" id="catsPrev" aria-label="Предыдущие типы автомобилей">‹</button>
-    <button class="category-carousel__arrow category-carousel__arrow--next" id="catsNext" aria-label="Следующие типы автомобилей">›</button>
-  </div>
-</div></section>
-<section class="catalog-results"><div class="catalog__container">
-
-  <div class="catalog-results__layout">
-    <h2 class="catalog-results__filter-title">Фильтр</h2>
-    <div class="catalog-toolbar">
-      <span class="catalog-toolbar__result-count">Найдено автомобилей: <b id="found">0</b></span>
-      <div class="catalog-toolbar__controls">
-        <button class="catalog-toolbar__filter-button" id="openFilters" aria-haspopup="dialog" aria-controls="mobileFilters">Фильтры <span class="catalog-toolbar__filter-count" id="filterCount" hidden>0</span></button>
-        <button class="catalog-toolbar__favorites-button" id="openFavorites" aria-haspopup="dialog" aria-controls="favoritesDrawer">
-          <img class="catalog-toolbar__favorites-icon" src="assets/icons/heart.svg" alt="">
-          Избранное <span class="catalog-toolbar__favorites-count" id="favoritesCount">0</span>
-        </button>
-        <select class="catalog-toolbar__sort" id="sort">
-          <option value="price-asc">Сортировать по цене: меньше</option>
-          <option value="price-desc">Сортировать по цене: больше</option>
-          <option value="year-desc">Сначала новее</option>
-          <option value="mileage-asc">По пробегу: меньше</option>
-        </select>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      Каталог автомобилей — AVTOPRIDE
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?v=container">
+  </head>
+  <body>
+    <main class="catalog">
+      <section class="catalog-intro">
+        <div class="catalog__container">
+          <div class="breadcrumbs">
+            <a href="#">
+              Главная
+            </a>
+            /
+            <span>
+              Каталог
+            </span>
+          </div>
+          <h1 class="catalog-intro__title">
+            Каталог автомобилей
+          </h1>
+          <p class="catalog-intro__description">
+            Выберите параметры автомобиля — покажем варианты под заказ и поможем рассчитать стоимость под ключ в Беларуси.
+          </p>
+          <div class="category-carousel">
+            <div class="category-carousel__track" id="cats" role="group" aria-label="Тип автомобиля">
+            </div>
+            <button class="category-carousel__arrow category-carousel__arrow--previous" id="catsPrev" aria-label="Предыдущие типы автомобилей">
+              ‹
+            </button>
+            <button class="category-carousel__arrow category-carousel__arrow--next" id="catsNext" aria-label="Следующие типы автомобилей">
+              ›
+            </button>
+          </div>
+        </div>
+      </section>
+      <section class="catalog-results">
+        <div class="catalog__container">
+          <div class="catalog-results__layout">
+            <h2 class="catalog-results__filter-title">
+              Фильтр
+            </h2>
+            <div class="catalog-toolbar">
+              <span class="catalog-toolbar__result-count">
+                Найдено автомобилей:
+                <b id="found">
+                  0
+                </b>
+              </span>
+              <div class="catalog-toolbar__controls">
+                <button class="catalog-toolbar__filter-button" id="openFilters" aria-haspopup="dialog" aria-controls="mobileFilters">
+                  Фильтры
+                  <span class="catalog-toolbar__filter-count" id="filterCount" hidden>
+                    0
+                  </span>
+                </button>
+                <button class="catalog-toolbar__favorites-button" id="openFavorites" aria-haspopup="dialog" aria-controls="favoritesDrawer">
+                  <img class="catalog-toolbar__favorites-icon" src="assets/icons/heart.svg" alt="">
+                  Избранное
+                  <span class="catalog-toolbar__favorites-count" id="favoritesCount">
+                    0
+                  </span>
+                </button>
+                <select class="catalog-toolbar__sort" id="sort">
+                  <option value="price-asc">
+                    Сортировать по цене: меньше
+                  </option>
+                  <option value="price-desc">
+                    Сортировать по цене: больше
+                  </option>
+                  <option value="year-desc">
+                    Сначала новее
+                  </option>
+                  <option value="mileage-asc">
+                    По пробегу: меньше
+                  </option>
+                </select>
+              </div>
+            </div>
+            <div class="catalog-results__filter-slot" id="filterSlot">
+              <aside class="catalog-filter" id="filter">
+              </aside>
+            </div>
+            <section>
+              <div class="catalog-results__list" id="grid">
+              </div>
+              <nav aria-label="Страницы каталога" class="pagination" id="pager">
+              </nav>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
+    <dialog class="filter-dialog" id="mobileFilters" aria-labelledby="mobileFilterTitle">
+      <div class="filter-dialog__shell">
+        <div class="filter-dialog__header">
+          <h2 class="filter-dialog__title" id="mobileFilterTitle">
+            Фильтры
+          </h2>
+          <button class="filter-dialog__close" id="closeFilters" aria-label="Закрыть фильтры">
+            ×
+          </button>
+        </div>
+        <div class="filter-dialog__content" id="mobileFilterContent">
+        </div>
+        <div class="filter-dialog__footer">
+          <button class="filter-dialog__submit" id="showFilteredCars">
+            Показать автомобили
+          </button>
+        </div>
       </div>
-    </div>
-
-    <div class="catalog-results__filter-slot" id="filterSlot"><aside class="catalog-filter" id="filter"></aside></div>
-    <section>
-      <div class="catalog-results__list" id="grid"></div>
-      <nav aria-label="Страницы каталога" class="pagination" id="pager"></nav>
-    </section>
-  </div>
-</div></section>
-</main>
-
-<dialog class="filter-dialog" id="mobileFilters" aria-labelledby="mobileFilterTitle">
-  <div class="filter-dialog__shell">
-    <div class="filter-dialog__header"><h2 class="filter-dialog__title" id="mobileFilterTitle">Фильтры</h2><button class="filter-dialog__close" id="closeFilters" aria-label="Закрыть фильтры">×</button></div>
-    <div class="filter-dialog__content" id="mobileFilterContent"></div>
-    <div class="filter-dialog__footer"><button class="filter-dialog__submit" id="showFilteredCars">Показать автомобили</button></div>
-  </div>
-</dialog>
-<dialog class="favorites-drawer" id="favoritesDrawer" aria-labelledby="favoritesTitle">
-  <div class="favorites-drawer__header">
-    <div>
-      <h2 class="favorites-drawer__title" id="favoritesTitle">Избранные авто</h2>
-      <p class="favorites-drawer__summary" id="favoritesSummary" aria-live="polite"></p>
-    </div>
-    <button class="favorites-drawer__close" id="closeFavorites" aria-label="Закрыть избранное">×</button>
-  </div>
-  <div class="favorites-drawer__content" id="favoritesContent"></div>
-  <div class="favorites-drawer__footer">Сохранённые автомобили останутся здесь при следующем посещении.</div>
-</dialog>
-<script src="js/data.js"></script>
-<script src="js/common.js"></script>
-<script src="js/app.js"></script>
-</body>
+    </dialog>
+    <dialog class="favorites-drawer" id="favoritesDrawer" aria-labelledby="favoritesTitle">
+      <div class="favorites-drawer__header">
+        <div>
+          <h2 class="favorites-drawer__title" id="favoritesTitle">
+            Избранные авто
+          </h2>
+          <p class="favorites-drawer__summary" id="favoritesSummary" aria-live="polite">
+          </p>
+        </div>
+        <button class="favorites-drawer__close" id="closeFavorites" aria-label="Закрыть избранное">
+          ×
+        </button>
+      </div>
+      <div class="favorites-drawer__content" id="favoritesContent">
+      </div>
+      <div class="favorites-drawer__footer">
+        Сохранённые автомобили останутся здесь при следующем посещении.
+      </div>
+    </dialog>
+    <script src="js/data.js">
+    </script>
+    <script src="js/common.js">
+    </script>
+    <script src="js/app.js">
+    </script>
+  </body>
 </html>

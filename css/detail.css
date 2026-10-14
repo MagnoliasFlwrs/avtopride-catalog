@@ -8,27 +8,27 @@
   position: relative;
   padding-top: 60px;
   isolation: isolate;
-}
 
-.detail-hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: url('../assets/detail/hero-glow.svg') center top / auto no-repeat;
-  z-index: -1;
-  pointer-events: none;
-}
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('../assets/detail/hero-glow.svg') center top / auto no-repeat;
+    z-index: -1;
+    pointer-events: none;
+  }
 
-.detail-hero::after {
-  content: '';
-  position: absolute;
-  top: 154px;
-  right: max(60px, calc((100% - 1320px) / 2));
-  width: 217px;
-  height: 211px;
-  background: url('../assets/detail/hero-mark.png') center / contain no-repeat;
-  opacity: .05;
-  pointer-events: none;
+  &::after {
+    content: '';
+    position: absolute;
+    top: 154px;
+    right: var(--container-gutter);
+    width: 217px;
+    height: 211px;
+    background: url('../assets/detail/hero-mark.png') center / contain no-repeat;
+    opacity: 0.05;
+    pointer-events: none;
+  }
 }
 
 .detail-hero__breadcrumbs {
@@ -38,14 +38,14 @@
   gap: 10px;
   font-size: 15px;
   line-height: 19px;
-}
 
-.detail-hero__breadcrumbs a {
-  text-decoration: underline;
-}
+  & a {
+    text-decoration: underline;
+  }
 
-.detail-hero__breadcrumbs a:first-child {
-  color: var(--red);
+  & a:first-child {
+    color: var(--red);
+  }
 }
 
 .detail-hero__title {
@@ -54,7 +54,7 @@
   font-size: 62px;
   font-weight: 500;
   line-height: 1.1;
-  letter-spacing: -.03em;
+  letter-spacing: -0.03em;
 }
 
 .detail-hero__description {
@@ -81,7 +81,7 @@
 .detail-hero__gallery .photo-gallery__image {
   width: 99.61%;
   height: 111.31%;
-  left: .39%;
+  left: 0.39%;
   top: -5.68%;
 }
 
@@ -123,7 +123,7 @@
   font-size: 24px;
   font-weight: 500;
   line-height: 1.1;
-  letter-spacing: -.03em;
+  letter-spacing: -0.03em;
 }
 
 .detail-summary__price {
@@ -135,18 +135,18 @@
   padding: 20px;
   background: var(--red);
   color: #fff;
-}
 
-.detail-summary__price i {
-  flex: 1;
-  min-width: 5px;
-  border-bottom: 1px solid #fff6;
-  transform: translateY(-3px);
-}
+  & i {
+    flex: 1;
+    min-width: 5px;
+    border-bottom: 1px solid #fff6;
+    transform: translateY(-3px);
+  }
 
-.detail-summary__price strong {
-  font-weight: 500;
-  text-align: right;
+  & strong {
+    font-weight: 500;
+    text-align: right;
+  }
 }
 
 .detail-summary__specs {
@@ -212,15 +212,15 @@
   border-top: 1px solid #ffffff1a;
   border-bottom: 1px solid #ffffff1a;
   background: var(--glass);
-}
 
-.brand-ribbon::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: url('../assets/detail/ribbon-glow.svg') right center / auto no-repeat;
-  opacity: .15;
-  pointer-events: none;
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('../assets/detail/ribbon-glow.svg') right center / auto no-repeat;
+    opacity: 0.15;
+    pointer-events: none;
+  }
 }
 
 .brand-ribbon__track {
@@ -262,15 +262,15 @@
   height: 52px;
   flex: none;
   align-items: center;
-}
 
-.brand-ribbon__logo::after {
-  content: '';
-  position: absolute;
-  right: -70px;
-  height: 18px;
-  width: 1px;
-  background: #fff3;
+  &::after {
+    content: '';
+    position: absolute;
+    right: -70px;
+    height: 18px;
+    width: 1px;
+    background: #fff3;
+  }
 }
 
 .brand-ribbon__mark {
@@ -292,19 +292,19 @@
   height: 52px;
   overflow: hidden;
   margin-left: -1.431px;
-}
 
-.brand-ribbon__wordmark img {
-  position: absolute;
-  width: 128.19%;
-  height: 100%;
-  left: -28.07%;
-  top: 0;
-}
+  & img {
+    position: absolute;
+    width: 128.19%;
+    height: 100%;
+    left: -28.07%;
+    top: 0;
+  }
 
-.brand-ribbon__wordmark:has(img[src*='vector']) img {
-  width: 100%;
-  left: 0;
+  &:has(img[src*='vector']) img {
+    width: 100%;
+    left: 0;
+  }
 }
 
 .car-description {
@@ -314,15 +314,15 @@
   gap: 10px;
   margin-top: 140px;
   isolation: isolate;
-}
 
-.car-description::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: url('../assets/detail/description-glow.svg') right bottom / auto no-repeat;
-  z-index: -1;
-  pointer-events: none;
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('../assets/detail/description-glow.svg') right bottom / auto no-repeat;
+    z-index: -1;
+    pointer-events: none;
+  }
 }
 
 .car-description__content {
@@ -333,8 +333,8 @@
   display: inline-flex;
   align-items: center;
   min-height: 40px;
-  padding: 8px 30px 8px 40px;
-  margin-left: -40px;
+  padding: 8px 30px 8px var(--container-gutter);
+  margin-left: calc(-1 * var(--container-gutter));
   border-radius: 0 10px 10px 0;
   background: var(--red);
   font-size: 15px;
@@ -344,7 +344,7 @@
   font-size: 50px;
   font-weight: 500;
   line-height: 1.1;
-  letter-spacing: -.03em;
+  letter-spacing: -0.03em;
 }
 
 .car-description__title {
@@ -373,7 +373,7 @@
   margin: 48px 0 20px;
   font-size: 28px;
   font-weight: 500;
-  letter-spacing: -.03em;
+  letter-spacing: -0.03em;
   line-height: 1.1;
 }
 
@@ -416,15 +416,15 @@
   margin-top: 140px;
   isolation: isolate;
   scroll-margin-top: 30px;
-}
 
-.detail-estimate::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: url('../assets/catalog-glow.svg') left center / auto repeat-y;
-  z-index: -1;
-  pointer-events: none;
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('../assets/catalog-glow.svg') left center / auto repeat-y;
+    z-index: -1;
+    pointer-events: none;
+  }
 }
 
 .detail-estimate__introduction {
@@ -454,25 +454,25 @@
 .cost-breakdown__heading {
   position: relative;
   margin-bottom: 40px;
-}
 
-.cost-breakdown__heading::after {
-  content: '';
-  position: absolute;
-  right: 30px;
-  top: 0;
-  width: 114.47px;
-  height: 111.54px;
-  background: #e31e241a;
-  mask: url('../assets/catalog-mark.png') center / contain no-repeat;
-  pointer-events: none;
+  &::after {
+    content: '';
+    position: absolute;
+    right: 30px;
+    top: 0;
+    width: 114.47px;
+    height: 111.54px;
+    background: #e31e241a;
+    mask: url('../assets/catalog-mark.png') center / contain no-repeat;
+    pointer-events: none;
+  }
 }
 
 .cost-breakdown__title {
   font-size: 24px;
   font-weight: 500;
   line-height: 1.1;
-  letter-spacing: -.03em;
+  letter-spacing: -0.03em;
   padding-left: 20px;
 }
 
@@ -492,7 +492,7 @@
   color: #fff;
   font-size: 24px;
   font-weight: 500;
-  letter-spacing: -.03em;
+  letter-spacing: -0.03em;
 }
 
 .cost-breakdown__title--details {
@@ -543,10 +543,10 @@
   justify-content: space-between;
   border-top: 1px solid #0707071a;
   margin-top: 35px;
-}
 
-.cost-breakdown__total .cost-breakdown__price {
-  border-radius: 0 0 4px 0;
+  & .cost-breakdown__price {
+    border-radius: 0 0 4px 0;
+  }
 }
 
 .detail-estimate__image-wrapper {
@@ -579,7 +579,7 @@
   font-size: 24px;
   font-weight: 500;
   line-height: 1.1;
-  letter-spacing: -.03em;
+  letter-spacing: -0.03em;
   margin-bottom: 20px;
 }
 
@@ -590,10 +590,10 @@
   font-size: 16px;
   line-height: 1.4;
   z-index: 1;
-}
 
-.estimate-note__paragraphs p + p {
-  margin-top: 22px;
+  & p + p {
+    margin-top: 22px;
+  }
 }
 
 .estimate-note__actions {
@@ -610,7 +610,7 @@
   height: 239px;
   right: 40px;
   bottom: 0;
-  opacity: .02;
+  opacity: 0.02;
 }
 
 .contact-dialog {
@@ -621,10 +621,10 @@
   border-radius: 8px;
   background: #fff;
   color: var(--ink);
-}
 
-.contact-dialog::backdrop {
-  background: #000a;
+  &::backdrop {
+    background: #000a;
+  }
 }
 
 .contact-dialog__close {
@@ -663,11 +663,11 @@
 
 .detail-error {
   padding-top: 80px;
-}
 
-.detail-error p {
-  margin: 30px 0;
-  font-size: 18px;
+  & p {
+    margin: 30px 0;
+    font-size: 18px;
+  }
 }
 
 @media (max-width: 1100px) {
@@ -761,20 +761,20 @@
 
   .detail-hero {
     padding-top: 30px;
-  }
 
-  .detail-hero::after {
-    display: none;
+    &::after {
+      display: none;
+    }
   }
 
   .detail-hero__breadcrumbs {
     font-size: 12px;
     gap: 6px;
-  }
 
-  .detail-hero__breadcrumbs > span:last-child {
-    flex-basis: 100%;
-    color: var(--mute);
+    & > span:last-child {
+      flex-basis: 100%;
+      color: var(--mute);
+    }
   }
 
   .detail-hero__title {
@@ -834,8 +834,6 @@
   }
 
   .detail-section-label {
-    padding-left: 16px;
-    margin-left: -16px;
     font-size: 13px;
   }
 
@@ -910,12 +908,12 @@
     align-items: stretch;
     gap: 20px;
     padding-top: 20px;
-  }
 
-  .cost-breakdown__total .cost-breakdown__price {
-    min-width: 0;
-    font-size: 22px;
-    border-radius: 0;
+    & .cost-breakdown__price {
+      min-width: 0;
+      font-size: 22px;
+      border-radius: 0;
+    }
   }
 
   .estimate-note {
